@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>InfiniteMovieGame</title>
+    <link href="css/default.css" rel="stylesheet" />
+</head>
+<body onload="ModeChange();">
+    <script src="js/globals.js"></script>
+    <script src="js/main.js"></script>
+
+    <form>
+
+        <h2 id="Opening">Welcome to the <a href="http://www.filmwalrus.com/search/label/Movie%20Game">Infinite Movie Game</a>.</h2>
+        <div>Press "Draw Cards" to display 2 things.</div>
+        <div>Think of a movie that fits both.</div>
+        <div>Enjoy.</div>
+        <p id="card1">Card 1: </p>
+        <p id="card2">Card 2: </p>
+        <p id="card3"></p>
+        <br />
+
+        <table width="210">
+            <tr>
+                <td>
+                    <input name="draw_cards" type="Button" value="Draw Cards" style="width:90px;" onclick="DrawCards()" />
+                </td>
+                <td align="right">
+                    <input name="draw_extra" type="Button" value="Extra Card" style="width:90px;" onclick="DrawExtra()" />
+                </td>
+            </tr>
+        </table>
+        <br />
+
+        <table width="210">
+            <tr>
+                <td>Category:</td>
+                <td align="right">
+                    <select name="category_mode" id="category_dropdown">
+                        <option value=0>All</option>
+                        <option value=1>Genres</option>
+                        <option value=22>Plots</option>
+                        <option value=2>Time periods</option>
+                        <option value=3>Characters</option>
+                        <option value=4>Actors & directors</option>
+                        <option value=5>Sets</option>
+                        <option value=6>Props</option>
+                        <option value=7>Themes</option>
+                        <option value=8>Styles</option>
+                        <option value=24>Colors & patterns</option>
+                        <option value=9>Titles</option>
+                        <option value=10>Filmcraft</option>
+                        <option value=11>Makeup & wardrobe</option>
+                        <option value=12>Audio</option>
+                        <option value=23>Countries</option>
+                        <option value=13>Transport</option>
+                        <option value=14>Love & death</option>
+                        <option value=15>Nature</option>
+                        <option value=16>Villains</option>
+                        <option value=17>Adaptations</option>
+                        <option value=18>Connected</option>
+                        <option value=19>Subjective</option>
+                        <option value=20>Games</option>
+                        <option value=21>Challenges</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <!--<br />-->
+        <table width="210">
+            <tr>
+                <td>Include names?:</td>
+                <td align="right">
+                    <select name="game_mode" id="mode_dropdown" onchange="ModeChange()">
+                        <option value=1>No names</option>
+                        <option value=2>Only names</option>
+                        <option value=3>One of each</option>
+                        <option value=4>Random</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <!--<br />-->
+        <div id='name_related_stuff'>
+            <table width="210">
+                <tr>
+                    <!--Difficulty of names:&nbsp&nbsp-->
+                    <td>Difficulty of names:</td>
+                    <td align="right">
+                        <select id="difficulty_dropdown" onchange="DifficultyChange()">
+                            <option value=0 selected>Special</option>
+                            <option value=1>Easy</option>
+                            <option value=2>Medium</option>
+                            <option value=3>Hard</option>
+                            <option value=4>Killer</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <div id='number_and_job'>
+                <table width="210">
+                    <tr>
+                        <td>Names per card:</td>
+                        <td align="right">
+                            <select id="number_dropdown">
+                                <option value=1>One</option>
+                                <option value=2>Two</option>
+                                <option value=3>Three</option>
+                                <option value=4>Four</option>
+                                <option value=5>Five</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <!--Jobs:&nbsp&nbsp-->
+                <input type="checkbox" name="job_gp" id="actors" checked> Actors
+                <input type="checkbox" name="job_gp" id="directors" checked> Directors
+                <input type="checkbox" name="job_gp" id="crew" checked> Crew
+            </div>
+        </div>
+        </div>
+        &nbsp&nbsp
+    </form>
+</body>
+</html>
